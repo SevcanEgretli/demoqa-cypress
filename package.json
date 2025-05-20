@@ -1,0 +1,16 @@
+{
+  "name": "demoqa-cypress",
+  "version": "1.0.0",
+  "description": "Cypress E2E tests for DemoQA practice form",
+  "main": "index.js",
+  "scripts": {
+      "test": "cypress run",
+      "test:headed": "cypress run --headed --browser chrome"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^14.3.3"
+  }
+}
