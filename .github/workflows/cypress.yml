@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '20'
 
@@ -27,13 +27,13 @@ jobs:
 
       - name: Upload Cypress screenshots (on failure)
         if: failure()
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: cypress-screenshots
           path: cypress/screenshots
 
       - name: Upload Cypress videos
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: cypress-videos
           path: cypress/videos
@@ -44,7 +44,7 @@ jobs:
           npx marge merged-report.json --reportDir cypress/reports/html
 
       - name: Upload Test Report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: mochawesome-report
           path: cypress/reports/html
