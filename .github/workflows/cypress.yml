@@ -44,7 +44,8 @@ jobs:
           npx marge merged-report.json --reportDir cypress/reports/html
 
       - name: Upload Test Report
-        uses: actions/upload-artifact@main
+        if: always()
+        uses: actions/upload-artifact@v3
         with:
           name: mochawesome-report
           path: cypress/reports/html
