@@ -10,7 +10,7 @@ module.exports = defineConfig({
       reportDir: 'cypress/reports',
       overwrite: false,
       html: true,
-      json: true
+      json: false
     },
     viewportWidth: 1280,
     viewportHeight: 720,
