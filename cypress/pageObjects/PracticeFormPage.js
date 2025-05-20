@@ -59,6 +59,39 @@ class PracticeFormPage {
     cy.get('#submit').click();
   }
 
+  fillForm(data) {
+  this.fillFirstName(data.firstName);
+  this.fillLastName(data.lastName);
+  this.fillEmail(data.email);
+  this.selectGender(data.gender);
+  this.fillMobile(data.mobile);
+  this.setDateOfBirth(data.dob.year, data.dob.month, data.dob.day);
+  this.selectSubject(data.subject);
+  this.selectHobby(data.hobby);
+  this.uploadPicture(data.picture);
+  this.fillAddress(data.address);
+  this.selectStateAndCity(data.state, data.city);
+}
+
+verifyModalValues(data) {
+  const expectedValues = [
+    `${data.firstName} ${data.lastName}`,
+    data.email,
+    data.gender,
+    data.mobile,
+    `${data.dob.day} ${data.dob.month},${data.dob.year}`,
+    data.subject,
+    data.hobby,
+    data.picture,
+    data.address,
+    `${data.state} ${data.city}`
+  ];
+
+  expectedValues.forEach((value) => {
+    cy.get('.modal-content').should('contain', value);
+  });
+}
+
   verifyModalData(value) {
     cy.get('.modal-content').should('be.visible').contains(value);
   }
