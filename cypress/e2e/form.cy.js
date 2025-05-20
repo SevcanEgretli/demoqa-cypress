@@ -1,4 +1,4 @@
-import PracticeFormPage from '../pageObjects/PracticeFormPage';
+import PracticeFormPage from '../support/step_definitions/pageObjects/PracticeFormPage';
 
 beforeEach(() => {
   cy.fixture('formData').as('formData');
