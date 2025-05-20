@@ -40,8 +40,8 @@ jobs:
       
       - name: Generate HTML report
         run: |
-          npx mochawesome-merge cypress/reports/*.json > merged-report.json
-          npx marge merged-report.json --reportDir cypress/reports/html
+        npx mochawesome-merge cypress/reports/*.json > merged-report.json
+        npx marge merged-report.json --reportDir cypress/reports/html
 
       - name: Upload Test Report
         if: always()
