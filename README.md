@@ -58,12 +58,22 @@ git clone https://github.com/SevcanEgretli/demoqa-cypress.git
 cd demoqa-cypress
 ```
 
-### 2. Install dependencies
+### 2. Install Node.js and npm
+
+Make sure you have Node.js and npm installed on your system. You can check with:
+
+```bash
+node -v
+npm -v
+```
+If you see version numbers, you’re good to go! If not please download Node.js from https://nodejs.org
+
+### 3. Install dependencies
 ```bash
 npm install
 ```
 
-### 3. Run Tests
+### 4. Run Tests
 
 Run all tests in headless mode:
 
