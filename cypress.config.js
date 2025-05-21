@@ -21,7 +21,7 @@ module.exports = defineConfig({
   screenshotsFolder: 'cypress/screenshots',
   e2e: {
     baseUrl: 'https://demoqa.com',
-    specPattern: 'cypress/e2e/**/*.feature',
+    specPattern: 'cypress/integration/**/*.feature',
     supportFile: 'cypress/support/e2e.js',
     async setupNodeEvents(on, config) {
       await addCucumberPlugin(on, config);
