@@ -9,7 +9,17 @@ When('I fill in the personal information', (dataTable) => {
   cy.get('#firstName').type(data.firstName)
   cy.get('#lastName').type(data.lastName)
   cy.get('#userEmail').type(data.email)
-  cy.get(`[for="gender-radio-${data.gender === 'Male' ? '1' : '2'}"]`).click()
+  let genderValue;
+
+  if (data.gender === 'Male') {
+    genderValue = '1';
+  } else if (data.gender === 'Female') {
+    genderValue = '2';
+  } else {
+    genderValue = '3'; // Other
+  }
+
+  cy.get(`[for="gender-radio-${genderValue}"]`).click()
   cy.get('#userNumber').type(data.mobile)
 })
 
@@ -26,9 +36,8 @@ When('I select the subjects {string} and {string}', (subject1, subject2) => {
   cy.get('#subjectsInput').type(`${subject2}{enter}`)
 })
 
-When('I select the hobbies {string} and {string}', (hobby1, hobby2) => {
-  cy.get(`[for="hobbies-checkbox-${hobby1 === 'Sports' ? '1' : '2'}"]`).click()
-  cy.get(`[for="hobbies-checkbox-${hobby2 === 'Sports' ? '1' : '2'}"]`).click()
+When('I select the hobby {string}', (hobby) => {
+  cy.contains('label.custom-control-label', hobby).click()
 })
 
 When('I upload a picture {string}', (filename) => {

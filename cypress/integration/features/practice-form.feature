@@ -12,7 +12,8 @@ Feature: Practice Form Submission
             | John      | Doe      | john.doe@example.com | Male   | 1234567890 |
         And I select the date of birth as "15 January 1990"
         And I select the subjects "Computer Science" and "Maths"
-        And I select the hobbies "Sports" and "Reading"
+        And I select the hobby "Music"
+        And I select the hobby "Sports"
         And I upload a picture "sample.png"
         And I fill in the address "123 Test Street, Test City, 12345"
         And I select the state "NCR" and city "Delhi"
@@ -25,7 +26,7 @@ Feature: Practice Form Submission
             | Mobile         | 1234567890                        |
             | Date of Birth  | 15 January,1990                   |
             | Subjects       | Computer Science, Maths           |
-            | Hobbies        | Sports, Reading                   |
+            | Hobbies        | Music, Sports                     |
             | Picture        | sample.png                        |
             | Address        | 123 Test Street, Test City, 12345 |
             | State and City | NCR Delhi                         |

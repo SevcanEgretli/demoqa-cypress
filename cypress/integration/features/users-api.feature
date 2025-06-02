@@ -7,7 +7,7 @@ Feature: Reqres Users API Tests
     Then the response body should match expected user details
 
   Scenario: Validate user list on page 2
-    When I send a GET request to "/api/users?page=2"
+    When I list users on page 2
     Then the response status code should be 200
     And the response body should contain metadata for page 2
     And the response should contain exactly 6 users

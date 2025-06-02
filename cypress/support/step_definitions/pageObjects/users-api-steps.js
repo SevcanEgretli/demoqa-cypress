@@ -7,6 +7,19 @@ When("I send a GET request to {string}", (endpoint) => {
   });
 });
 
+When("I list users on page {int}", (page) => {
+  cy.request({
+    method: "GET",
+    url: `https://reqres.in/api/users?page=${page}`,
+    headers: {
+      "x-api-key": "reqres-free-v1"
+    }
+  }).then((res) => {
+    response = res;
+  });
+});
+
+
 Then("the response status code should be {int}", (statusCode) => {
   expect(response.status).to.eq(statusCode);
 });
