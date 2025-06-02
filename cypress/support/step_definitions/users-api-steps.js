@@ -2,7 +2,13 @@ import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 let response;
 
 When("I send a GET request to {string}", (endpoint) => {
-  cy.request(`https://reqres.in${endpoint}`).then((res) => {
+  cy.request({
+    method: "GET",
+    url: `https://reqres.in${endpoint}`,
+    headers: {
+      "x-api-key": "reqres-free-v1"
+    }
+  }).then((res) => {
     response = res;
   });
 });
