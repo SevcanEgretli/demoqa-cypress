@@ -4,7 +4,7 @@ let response;
 When("I send a GET request to {string}", (endpoint) => {
   cy.request({
     method: "GET",
-    url: `https://reqres.in${endpoint}`,
+    url: `${Cypress.env("apiBaseUrl")}${endpoint}`,
     headers: {
       "x-api-key": "reqres-free-v1"
     }
@@ -16,7 +16,7 @@ When("I send a GET request to {string}", (endpoint) => {
 When("I list users on page {int}", (page) => {
   cy.request({
     method: "GET",
-    url: `https://reqres.in/api/users?page=${page}`,
+    url: `${Cypress.env("apiBaseUrl")}/users?page=${page}`,
     headers: {
       "x-api-key": "reqres-free-v1"
     }
@@ -95,7 +95,7 @@ When('I send a POST request to {string} with the following body and headers:', (
 
   cy.request({
     method: 'POST',
-    url: `https://reqres.in${endpoint}`,
+    url: `${Cypress.env("apiBaseUrl")}${endpoint}`,
     headers,
     body,
   }).then((res) => {

@@ -21,6 +21,9 @@ module.exports = defineConfig({
   screenshotsFolder: 'cypress/screenshots',
   e2e: {
     baseUrl: 'https://demoqa.com',
+    env: {
+      apiBaseUrl: 'https://reqres.in/api'
+  },
     specPattern: 'cypress/integration/**/*.feature',
     supportFile: 'cypress/support/e2e.js',
     async setupNodeEvents(on, config) {

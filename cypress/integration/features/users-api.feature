@@ -1,7 +1,7 @@
 Feature: Reqres Users API Tests
 
   Scenario: Get single user by ID
-    When I send a GET request to "/api/users/2"
+    When I send a GET request to "/users/2"
     Then the response status code should be 200
     And the response body should contain user with id 2
     Then the response body should match expected user details
@@ -15,7 +15,7 @@ Feature: Reqres Users API Tests
     And the support section should contain url and text
 
   Scenario: Successfully create a new user
-    When I send a POST request to "/api/users" with the following body and headers:
+    When I send a POST request to "/users" with the following body and headers:
       | name     | morpheus     |
       | job      | leader       |
       | x-api-key| reqres-free-v1 |
